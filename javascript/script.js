@@ -21,9 +21,8 @@ xhttp.onreadystatechange = function() {
 		document.getElementById('temperature-level').textContent = data.main.temp;
 		// Set the temperature description
 		document.getElementById('temperature-description').textContent = data.weather[0].description;
-		// Set weather icon
-		document.getElementById('weather-icon').src=data.weather[0].icon;
 
+		setBackgroundImage(data.weather[0].main);
 	}
 }
 
@@ -39,7 +38,6 @@ function success(position) {
 	// If user allowed to know its location, show the data
 	document.querySelector('.celsius-degrees').style.visibility = "visible";
 	document.querySelector('.fahrenheit-degrees').style.visibility = "visible";
-	document.getElementById('weather-icon').style.visibility = "visible";
 
 	// User allowed to give its location, so we open and send the request
 	xhttp.open("GET", "https://fcc-weather-api.glitch.me/api/current?lat=" + lat + "&lon=" + lon, true);
@@ -49,4 +47,32 @@ function success(position) {
 // Location couldn't be retrieved
 function error(err) {
 	alert("You need to allow to know your temperature");
+}
+
+function setBackgroundImage(weatherCondition) {
+	switch(weatherCondition) {
+		case "Clear":
+			document.documentElement.style.backgroundImage = 'url(images/clear-sky.jpg)';
+			break;
+		case "Drizzle":
+			document.documentElement.style.backgroundImage = 'url(images/drizzle.jpg)';
+			break;
+		case "Rain":
+			document.documentElement.style.backgroundImage = 'url(images/rain.jpg)';
+			break;
+		case "Clouds":
+			document.documentElement.style.backgroundImage = 'url(images/clouds.jpg)';
+			break;
+		case "Snow":
+			document.documentElement.style.backgroundImage = 'url(images/snow.jpg)';
+			break;
+		case "Thunderstorm":
+			document.documentElement.style.backgroundImage = 'url(images/thunderstorm.jpg)';
+			break;
+		case "Mist":
+			document.documentElement.style.backgroundImage = 'url(images/mist.jpg)';
+			break;
+		default:
+			console.log("There isn't an image for this weather condition");
+	}
 }

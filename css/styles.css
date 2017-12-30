@@ -1,16 +1,45 @@
 /* --- GENERAL STYLES --- */
-html, body, .container {
+html, body, .outer-container {
 	height: 100%;
 }
 
-body, h1 {
+html {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+body, h1, h2 {
 	margin: 0;
 }
 
-.container {
+.title,
+#location {
+	font-weight: 300;
+}
+
+/* Center outer-container horizontally */
+.outer-container {
 	width: 70%;
     margin: 0 auto;
     text-align: center;
+}
+
+/* Center inner-container vertically */
+.inner-container {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 /* --- TEMPERATURE STYLES --- */

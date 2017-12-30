@@ -1,0 +1,19 @@
+@media screen and (min-width: 352px) {
+	.title {
+		font-size: 2em;
+	}
+
+	#location, #temperature-description  {
+		font-size: 1.5em;
+	}
+
+	#temperature-level,
+	.celsius-degrees,
+	.fahrenheit-degrees {
+		font-size: 3em;
+	}
+
+	.weather-icon img {
+		width: 200px;
+	}
+}

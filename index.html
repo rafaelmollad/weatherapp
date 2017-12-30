@@ -3,30 +3,30 @@
 	<head>
 		<title>Weather App</title>
 		<script type="text/javascript" src="javascript/script.js" async></script>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 	</head>
 	<body>
-		<div class="container">
-			<!-- Website name -->
-			<h1>Weather app</h1>
-			<!-- Location -->
-			<div class="location">
-				<h2 id="location"></h2>
-			</div>
-			<!-- Temperature -->
-			<div class="temperature">
-				<p id="temperature-level"></p>
-				<div class="celsius-degrees"> <!-- Celsius button -->
-					<p>C</p>
+		<div class="outer-container">
+			<div class="inner-container"><!-- This container is as high as its content -->
+				<!-- Website name -->
+				<h1 class="title">Weather app</h1>
+				<!-- Location -->
+				<div class="location">
+					<h2 id="location"></h2>
 				</div>
-				<div class="fahrenheit-degrees"> <!-- Fahrenheit button -->
-					<p>F</p>
+				<!-- Temperature -->
+				<div class="temperature">
+					<p id="temperature-level"></p>
+					<div class="celsius-degrees"> <!-- Celsius button -->
+						<p>C</p>
+					</div>
+					<div class="fahrenheit-degrees"> <!-- Fahrenheit button -->
+						<p>F</p>
+					</div>
+					<p id="temperature-description"></p>
 				</div>
-				<p id="temperature-description"></p>
-			</div>
-			<!-- Weather Icon -->
-			<div class="weather-icon">
-				<img src="" alt="weather icon" id="weather-icon">
 			</div>
 		</div>
 	</body>
