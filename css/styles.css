@@ -1,0 +1,28 @@
+/* --- GENERAL STYLES --- */
+html, body, .container {
+	height: 100%;
+}
+
+body, h1 {
+	margin: 0;
+}
+
+.container {
+	width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- TEMPERATURE STYLES --- */
+#temperature-level,
+.celsius-degrees,
+.fahrenheit-degrees {
+	display: inline-block;
+}
+
+/* Make these elements invisible until user allows to give its location */
+.celsius-degrees,
+.fahrenheit-degrees,
+#weather-icon {
+	visibility: hidden;
+}
