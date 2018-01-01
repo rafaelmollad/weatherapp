@@ -6,8 +6,9 @@ var long;
 var xhttp = new XMLHttpRequest();
 console.log(xhttp.readyState);
 
-// Every time the status of the XMLHttpRequest object changes
-// This anonymous function will be called back
+/** Every time the status of the XMLHttpRequest object changes
+ *  This anonymous function will be called back
+ */
 xhttp.onreadystatechange = function() {
 	console.log(xhttp.readyState);
 	// If request is done(4) and the response is OK(200), execute the following code
@@ -29,7 +30,7 @@ xhttp.onreadystatechange = function() {
 // Try to get user's location
 navigator.geolocation.getCurrentPosition(success, error);
 
-// Location could be retrieved
+// Called if location could be retrieved
 function success(position) {
 	// Get user's coordinates
 	lat = position.coords.latitude;
@@ -44,11 +45,14 @@ function success(position) {
 	xhttp.send()
 }
 
-// Location couldn't be retrieved
+// Called if location couldn't be retrieved
 function error(err) {
 	alert("You need to allow to know your temperature");
 }
 
+/* Change the background
+ * image according to the weather condition
+ */
 function setBackgroundImage(weatherCondition) {
 	switch(weatherCondition) {
 		case "Clear":

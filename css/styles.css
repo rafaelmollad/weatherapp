@@ -3,6 +3,8 @@ html, body, .outer-container {
 	height: 100%;
 }
 
+/* These styles will be applied to the image
+ that will be added dinamically */
 html {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -17,13 +19,27 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
-body, h1, h2 {
+body, h1, h2, p {
 	margin: 0;
+}
+
+
+.title {
+    position: relative;
+    top: 35%;
 }
 
 .title,
 #location {
 	font-weight: 300;
+
+}
+
+#location,
+.title,
+#temperature-description {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Center outer-container horizontally */
@@ -40,6 +56,16 @@ body, h1, h2 {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+#temperature-description {
+    margin-top: 25px;
+}
+
+/* --- LOCATION STYLES --- */
+
+.location {
+	margin-bottom: 25px;
 }
 
 /* --- TEMPERATURE STYLES --- */
