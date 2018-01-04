@@ -39,3 +39,16 @@
 		font-size: 2em;
 	}
 }
+
+@media screen and (max-height: 660px) {
+	.title {
+		top: 30% !important;
+	}
+}
+
+@media screen and (max-height: 510px) {
+	.title {
+		top: 25% !important;
+	}
+}
+
