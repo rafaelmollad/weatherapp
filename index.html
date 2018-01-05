@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Weather App</title>
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<script type="text/javascript" src="javascript/script.js" async></script>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
@@ -20,11 +21,13 @@
 				<!-- Temperature -->
 				<div class="temperature">
 					<p id="temperature-level"></p>
-					<div class="celsius-degrees"> <!-- Celsius button -->
-						<p>C</p>
+					 <!-- Celsius button -->
+					<div class="celsius-degrees celsius-degrees-on-click" id="celsius-degrees">
+						<p class="degrees-symbol celsius-paragraph">C</p>
 					</div>
-					<div class="fahrenheit-degrees"> <!-- Fahrenheit button -->
-						<p>F</p>
+					<!-- Fahrenheit button -->
+					<div class="fahrenheit-degrees" id="fahrenheit-degrees">
+						<p class="fahrenheit-paragraph">F</p>
 					</div>
 					<p id="temperature-description"></p>
 				</div>

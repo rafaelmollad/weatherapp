@@ -17,7 +17,7 @@ xhttp.onreadystatechange = function() {
 		console.log(data);
 
 		// Set location text
-		document.getElementById('location').textContent = data.name;
+		document.getElementById('location').textContent = data.name + ", " + data.sys.country;
 		// Set temperature level text
 		document.getElementById('temperature-level').textContent = data.main.temp;
 		// Set the temperature description
@@ -80,3 +80,63 @@ function setBackgroundImage(weatherCondition) {
 			console.log("There isn't an image for this weather condition");
 	}
 }
+
+var celsiusDegreesSelected = true; // Celsius button is selected by default
+var fahrenheitDegreesSelected = false;
+
+/**
+* Listen when user clicks on the Celsius button
+* When this happens, we remove the styles from the Fahrenheit button
+* And we add those styles to the celsius button
+*/
+document.getElementById("celsius-degrees").onclick =  function() {
+	// Fahrenheit is no longer selected
+	fahrenheitDegreesSelected = false;
+
+	// Do this only when Fahrenheit button is currently selected
+	if (celsiusDegreesSelected == false)
+	{
+		document.getElementById("fahrenheit-degrees").classList.remove("fahrenheit-degrees-on-click");
+		// Remove degree symbol before Fahrenheit paragraph
+		document.querySelector(".fahrenheit-degrees p").classList.remove("degrees-symbol");
+		// Make fahrenheit paragraph black(meaning not selected)
+		document.querySelector(".fahrenheit-paragraph").style.color = "#000000"; 
+
+		this.className += " celsius-degrees-on-click";
+		// Add degree symbol before Celsius paragraph
+		document.querySelector(".celsius-degrees p").classList.add("degrees-symbol");
+		// Make celsius paragraph white(meaning selected)
+		document.querySelector(".celsius-paragraph").style.color = "#FFFFFF"; 
+	}
+}
+
+/**
+* Listen when user clicks on the Fahrenheit button
+* When this happens, we remove the styles from the Celsius button
+* And we add those styles to the Fahrenheit button
+*/
+document.getElementById("fahrenheit-degrees").onclick =  function() {
+	// Celsius is no longer selected
+	celsiusDegreesSelected = false;
+	
+	// Do this only when Celsius button is currently selected
+	if (fahrenheitDegreesSelected == false) {
+			// Remove degree symbol before Celsius paragraph
+			document.getElementById("celsius-degrees").classList.remove("celsius-degrees-on-click");
+			// Add class to style Celsius button
+			document.querySelector(".celsius-degrees p").classList.remove("degrees-symbol");
+			// Make Celsius paragraph black(meaning not selected)
+			document.querySelector(".celsius-paragraph").style.color = "#000000"; 
+
+			// Add class to style Fahrenheit button
+			this.className += " fahrenheit-degrees-on-click";
+			//  Add degree symbol before Fahrenheit paragraph
+			document.querySelector(".fahrenheit-degrees p").classList.add("degrees-symbol");
+			// Make Fahrenheit paragraph white(meaning selected)
+			document.querySelector(".fahrenheit-paragraph").style.color = "#FFFFFF"; 
+	}
+
+	// Fahreneheit button is now selected
+	fahrenheitDegreesSelected = true;
+}
+

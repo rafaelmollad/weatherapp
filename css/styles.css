@@ -75,9 +75,48 @@ body, h1, h2, p {
 	display: inline-block;
 }
 
+
+/* Horizontal distance between temperature level and Celsius and Fahrenheit buttons */
+#temperature-level {
+	margin-right: 20px;
+}
+
 /* Make these elements invisible until user allows to give its location */
 .celsius-degrees,
-.fahrenheit-degrees,
-#weather-icon {
+.fahrenheit-degrees {
 	visibility: hidden;
+}
+
+/* When user hovers button, make the cursor a pointer */
+.celsius-degrees:hover,
+.fahrenheit-degrees:hover {
+	cursor: pointer;
+}
+
+/* Styles for Celsius and Fahrenheit button */
+.celsius-degrees-on-click,
+.fahrenheit-degrees-on-click {
+	border: 2px solid #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* Add ° symbol before Celsius and Fahrenheit */
+.degrees-symbol::before {
+	content: "°";
+}
+
+
+/* Disable text selection on buttons */
+.celsius-paragraph,
+.fahrenheit-paragraph {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.celsius-paragraph {
+	color: #FFFFFF;
 }
