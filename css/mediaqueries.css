@@ -17,6 +17,11 @@
 	#temperature-description  {
 		font-size: 1.5em;
 	}
+
+	#temperature-level {
+		display: block !important;
+		margin-right: 0;
+	}
 }
 
 @media screen and (min-width: 1135px) {
@@ -40,15 +45,23 @@
 	}
 }
 
-@media screen and (max-height: 660px) {
+@media screen and (min-height: 375px) {
 	.title {
-		top: 30% !important;
+		top: 13% !important;
 	}
 }
 
-@media screen and (max-height: 510px) {
+@media screen and (min-height: 550px) {
 	.title {
-		top: 25% !important;
+		top: 20% !important;
 	}
 }
+
+@media screen and (min-height: 660px) {
+	.title {
+		top: 23% !important;
+	}
+
+}
+
 

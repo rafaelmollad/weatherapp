@@ -23,7 +23,7 @@ body, h1, h2, p {
 	margin: 0;
 }
 
-
+/* Title position from its initial position */
 .title {
     position: relative;
     top: 35%;
@@ -58,9 +58,6 @@ body, h1, h2, p {
     transform: translateY(-50%);
 }
 
-#temperature-description {
-    margin-top: 25px;
-}
 
 /* --- LOCATION STYLES --- */
 
@@ -69,17 +66,17 @@ body, h1, h2, p {
 }
 
 /* --- TEMPERATURE STYLES --- */
+
+#temperature-description {
+    margin-top: 25px;
+}
+
 #temperature-level,
 .celsius-degrees,
 .fahrenheit-degrees {
 	display: inline-block;
 }
 
-
-/* Horizontal distance between temperature level and Celsius and Fahrenheit buttons */
-#temperature-level {
-	margin-right: 20px;
-}
 
 /* Make these elements invisible until user allows to give its location */
 .celsius-degrees,

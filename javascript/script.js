@@ -5,6 +5,7 @@ var long;
 // Create XMLHtppRequest object
 var xhttp = new XMLHttpRequest();
 console.log(xhttp.readyState);
+var data;
 
 /** Every time the status of the XMLHttpRequest object changes
  *  This anonymous function will be called back
@@ -13,7 +14,7 @@ xhttp.onreadystatechange = function() {
 	console.log(xhttp.readyState);
 	// If request is done(4) and the response is OK(200), execute the following code
 	if (this.readyState == 4 && this.status == 200) {
-		var data = JSON.parse(xhttp.responseText);
+		data = JSON.parse(xhttp.responseText);
 		console.log(data);
 
 		// Set location text
@@ -106,7 +107,9 @@ document.getElementById("celsius-degrees").onclick =  function() {
 		// Add degree symbol before Celsius paragraph
 		document.querySelector(".celsius-degrees p").classList.add("degrees-symbol");
 		// Make celsius paragraph white(meaning selected)
-		document.querySelector(".celsius-paragraph").style.color = "#FFFFFF"; 
+		document.querySelector(".celsius-paragraph").style.color = "#FFFFFF";
+		// Change temperature to Celsius degrees
+		document.getElementById('temperature-level').textContent = data.main.temp; 
 	}
 }
 
@@ -133,10 +136,17 @@ document.getElementById("fahrenheit-degrees").onclick =  function() {
 			//  Add degree symbol before Fahrenheit paragraph
 			document.querySelector(".fahrenheit-degrees p").classList.add("degrees-symbol");
 			// Make Fahrenheit paragraph white(meaning selected)
-			document.querySelector(".fahrenheit-paragraph").style.color = "#FFFFFF"; 
+			document.querySelector(".fahrenheit-paragraph").style.color = "#FFFFFF";
+			// Change temperature to Fahrenheit degrees
+			document.getElementById('temperature-level').textContent = getFahrenheit(data.main.temp);
+
 	}
 
 	// Fahreneheit button is now selected
 	fahrenheitDegreesSelected = true;
 }
 
+
+function getFahrenheit(celsiusDegrees) {
+	return celsiusDegrees * 9/5 + 32;
+}
