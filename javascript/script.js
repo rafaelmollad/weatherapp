@@ -57,7 +57,7 @@ function error(err) {
 function setBackgroundImage(weatherCondition) {
 	switch(weatherCondition) {
 		case "Clear":
-			document.documentElement.style.backgroundImage = 'url(images/clear-sky.jpg)';
+			document.documentElement.style.backgroundImage = 'url(images/clear.jpg)';
 			break;
 		case "Drizzle":
 			document.documentElement.style.backgroundImage = 'url(images/drizzle.jpg)';

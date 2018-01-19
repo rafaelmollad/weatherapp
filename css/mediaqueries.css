@@ -45,6 +45,13 @@
 	}
 }
 
+
+@media screen and (min-height: 225px)  {
+	.title {
+		top: 0 !important;
+	}
+}
+
 @media screen and (min-height: 375px) {
 	.title {
 		top: 13% !important;
@@ -63,5 +70,3 @@
 	}
 
 }
-
-
