@@ -20,7 +20,7 @@ xhttp.onreadystatechange = function() {
 		// Set location text
 		document.getElementById('location').textContent = data.name + ", " + data.sys.country;
 		// Set temperature level text
-		document.getElementById('temperature-level').textContent = data.main.temp;
+		document.getElementById('temperature-level').textContent = Math.trunc(data.main.temp);
 		// Set the temperature description
 		document.getElementById('temperature-description').textContent = data.weather[0].description;
 
@@ -109,7 +109,7 @@ document.getElementById("celsius-degrees").onclick =  function() {
 		// Make celsius paragraph white(meaning selected)
 		document.querySelector(".celsius-paragraph").style.color = "#FFFFFF";
 		// Change temperature to Celsius degrees
-		document.getElementById('temperature-level').textContent = data.main.temp; 
+		document.getElementById('temperature-level').textContent = Math.trunc(data.main.temp); 
 	}
 }
 
@@ -148,5 +148,5 @@ document.getElementById("fahrenheit-degrees").onclick =  function() {
 
 
 function getFahrenheit(celsiusDegrees) {
-	return celsiusDegrees * 9/5 + 32;
+	return Math.trunc(celsiusDegrees * 9/5 + 32);
 }
